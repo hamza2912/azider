@@ -1,0 +1,52 @@
+<div class="container roleMain">
+        <div class="section-title text-center mb-35 pt-5">
+            <h2>Featured Products</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when look</p>
+        </div>
+        <div class="input-group mb-3 pt-3">
+                <input #search type="text" (keyup)="filter(search.value)" class="form-control" placeholder="Search" />
+                <div class="input-group-append">
+                     <div class="header-search common-style">
+                      <button class="sidebar-trigger-search">
+                          <span class="ion-ios-search-strong"></span>
+                      </button>
+                    </div>
+                </div>
+        </div>
+        <div class='container'>
+                <div class="product-style">
+                    <div class="product-tab-list text-center mb-45 nav product-menu-mrg pt-3 pb-5" role="tablist">
+                        <!-- <a class='cursor-pointer' [class.active]="category.isActive"
+                            *ngFor="let category of categories"
+                            (click)="filterCategory(category)"
+                            data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+                            <h4 data-aos="zoom-in" data-aos-duration="1000">{{category.name}}</h4>
+                        </a> -->
+                        <!-- <a class='cursor-pointer' [class.active]="true" href='/shop' data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+                            <h4 data-aos="zoom-in" data-aos-duration="1000">ALL CATEGORIES</h4>
+                        </a> -->
+                        <div *ngFor="let category of categories"  class="btn-group itemDropdown" mdbDropdown>
+                            <a [class.active]="category.isActive" role="button" (click)="filterCategory(category)" class='cursor-pointer' mdbDropdownToggle data-toggle="tab"  aria-selected="true" aria-controls="home1">    
+                                <h4 data-aos="zoom-in" data-aos-duration="1000">{{category.id}}</h4>
+                            </a>
+                            <div *ngIf="category.subCategories"  class="dropdown-menu">
+                                    <a *ngFor="let subcategory of category.subCategories" role='button 'class="dropdown-item" role="button" (click)="filterCategory(category,subcategory)">{{subcategory}}</a>
+                                  
+                                </div>
+                            </div>
+                    </div>
+                    <div class="keepSpaces">
+                                <div class="col-lg-4 col-sm-6 col-12 pb-5" *ngFor="let product of filteredProducts">
+                                    <app-product-card
+                                        [cart]="cart"
+                                        [product]="product">
+                                    </app-product-card>
+                                </div>
+                                <div align='center' *ngIf='filteredProducts.length === zero' class="pt-5 pb-5 mb-5" >
+                                        <span>No Items</span>
+                                    </div> 
+                           
+                    </div>   
+            </div>
+</div>
+

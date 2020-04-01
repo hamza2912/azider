@@ -1,0 +1,16 @@
+.card-footer {
+    padding: 0;
+}
+
+.card-footer .btn {
+    border-radius: 0;
+    width: 100%;
+}
+
+.items-count {
+    line-height: 38px;
+}
+
+.card {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,17 @@
+.keepSpaces {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+
+  .dropdown-menu{
+    padding-bottom: 20px;
+    position: relative;
+    border: none;
+  }
+
+  .itemDropdown:hover .dropdown-menu{
+    display: block;
+
+  }

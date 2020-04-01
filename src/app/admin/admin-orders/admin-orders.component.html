@@ -1,0 +1,94 @@
+<div class='container roleMain'>
+<h1>Orders</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th >Order Details</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Completed</th>
+      <th class="text-center" width="180">Actions</th>
+    </tr>
+  </thead> 
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>
+            <div class="btn-group itemDropdown" mdbDropdown>
+                    <a class='cursor-pointer' mdbDropdownToggle data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+                    {{ order.name }}
+                    </a>
+                    <div class="col-md-6  dropdown-menu">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    {{ order.name }}
+                                </h4>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                         <div >
+                                            Address: {{order.address}}
+                                         </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                            <div >
+                                               City: {{order.city}}
+                                            </div>
+                                       </li>
+                                       <li class="list-group-item">
+                                            <div >
+                                               Phone: {{order.phone}}
+                                            </div>
+                                       </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+      </td>
+      <td>
+          <div class="btn-group itemDropdown" mdbDropdown>
+              <a class='cursor-pointer' mdbDropdownToggle data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+              Show details
+              </a>
+              <div class="col-md-6  dropdown-menu">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">
+                              Order details
+                          </h4>
+                          <p class="card-text">
+                            Items
+                          </p>
+                          <ul class="list-group list-group-flush">
+                              <li class="list-group-item" *ngFor="let item of order.items">
+                                  <h5>{{item.quantity}} x {{item.product.title}} </h5>
+                                  <div >
+                                     Cost: Rs.{{item.quantity * item.product.price}}
+                                  </div>
+                                  <div >
+                                      Size: {{item.product.sizes}}
+                                   </div>
+                                   <div >
+                                      Color: {{item.product.colors}}
+                                   </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              </div>
+
+      </td>
+      <td>{{ order.datePlaced | date}}</td>
+      <td>{{ order.amount | currency}}</td>
+      <td>{{ order.isComplete ? 'Yes' : 'No'}}</td>
+      <td>
+        <button *ngIf="!order.isComplete" type="button"
+          (click)="markOrderComplete(order)" class="btn btn-success">Mark complete</button>
+      </td>
+    </tr>
+  </tbody> 
+</table>
+</div>
+

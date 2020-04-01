@@ -1,0 +1,55 @@
+
+<div class="single-product">
+    <div class="product-img">
+        <a [routerLink]="['/product/view', product.id]"><img [src]="product.imageUrl" alt="" width='200' height='300'></a>
+        <span *ngIf="IsSale" >sale</span>
+        <div class="product-action">
+            <!-- <a title="favorites" class="animate-left" href="#"><i class="ion-ios-heart-outline"></i></a> -->
+            <a [routerLink]="['/product/view', product.id]" title="Quick View"  class="animate-right" href="#"><i class="ion-ios-eye-outline"></i></a>
+        </div>
+    </div>
+    <div class="product-content">
+        <div class="product-title-price">
+            <div class="product-title">
+                <h4><a href="product-details-6.html">{{product.title}}</a></h4>
+            </div>
+            <div class="product-price">
+                <span>{{product.price | currency}}</span>
+            </div>
+    </div>
+        <div class="product-cart-categori">
+            <div class="product-cart">
+                <span>{{quantity}} in cart</span>
+            </div>
+            <div class="product-categori">
+                <a class='cursor-pointer' role="button" (click)="addToCart(product)"  ><i class="ion-bag"></i>
+                  <!-- <button *ngIf="!quantity" class="btn btn-info" type="button" (click)="addToCart(product)">Add to cart</button> -->
+                   Add to cart</a>
+            </div>
+        </div>
+</div>
+
+
+<!-- <div class="card">
+    <img class="card-img-top" [src]="product.imageUrl" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">{{product.title}}</h4>
+      <h6 class="card-text">{{product.price | currency}}</h6>
+    </div>
+    <div class="card-footer">
+      <button *ngIf="!quantity" class="btn btn-info" type="button" (click)="addToCart(product)">Add to cart</button>
+      <div *ngIf="quantity" class="row no-gutters">
+        <div class="col-3">
+          <button class="btn btn-secondary" type="button"
+            (click)="addToCart(product)">+</button>
+        </div>
+        <div class="col-6 text-center items-count">
+          {{quantity}} in cart
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary" type="button"
+            (click)="subFromCart(product)">-</button>
+        </div>
+      </div>
+    </div>
+</div> -->

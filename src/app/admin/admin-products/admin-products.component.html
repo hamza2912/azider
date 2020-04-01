@@ -1,0 +1,31 @@
+<div class='container roleMain'>
+    <div class="input-group mb-3">
+    <input #search type="text" (keyup)="filter(search.value)" class="form-control" placeholder="Search" />
+    <div class="input-group-append">
+      <a class="btn btn-success" routerLink="/admin/products/new">Create new Product</a>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th class="text-center" width="200">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of filteredProducts">
+            <td>{{product.title}}</td>
+            <td>{{product.price | currency}}</td>
+            <td>{{product.category}}</td>
+            <td class="text-center">
+                <a [routerLink]="['/admin/products', product.id]" class="btn btn-danger mr-2">
+                    Edit
+                </a>
+                <button class="btn btn-danger" type="button" (click)="deleteProduct(product.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

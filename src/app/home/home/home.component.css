@@ -1,0 +1,55 @@
+.intro-section{
+    background: bottom no-repeat;
+    background-size: cover;
+  }
+  
+  .intro-section .container {
+    position: relative;
+    padding-top: 15rem;
+    padding-bottom: 10rem;
+  }
+  
+  .intro-section__image {
+    position: absolute;
+    right: -50%;
+    bottom: 0;
+  }
+
+  .middle-section {
+    background: center no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+  }
+
+  .last-section {
+    background: url('https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') top no-repeat;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+  }
+
+  .keepitcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ul,li {
+      list-style: none;
+  }
+
+  .fancy{
+    font-family: 'Poppins';
+  }
+
+  .dropdown-menu{
+    padding-bottom: 20px;
+    position: relative;
+    border: none;
+  }
+
+  .itemDropdown:hover .dropdown-menu{
+    display: block;
+
+  }

@@ -1,0 +1,92 @@
+<div class='container'>
+    <div class="product-style">
+        <div *ngIf='showCategory' class="product-tab-list text-center mb-45 nav product-menu-mrg pt-3" role="tablist">
+            <a class='cursor-pointer' [class.active]="category.isActive"
+            *ngFor="let category of categories"
+            (click)="filterCategory(category)"
+            data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+            <h4 data-aos="zoom-in" data-aos-duration="1000">{{category.name}}</h4>
+        </a>
+    </div>
+    
+    <mdb-carousel [isControls]="true" [ngSwitch]="carouselDisplayMode" class="carousel-multi-item multi-animation pt-5" [type]="'carousel-multi-item'"
+    [animation]="'slide'">
+    <ng-container *ngSwitchCase="'multiple'">
+        <mdb-carousel-item *ngFor="let item of slides; let i = index">
+            <div class="keepSpaces">
+                <div *ngFor="let product of item; let cardIndex = index" class="col-lg-4 col-sm-6 col-12 pb-5">
+                    <app-product-card 
+                    [cart]="cart"
+                    [product]="product">
+                </app-product-card> 
+            </div>
+        </div>
+        
+    </mdb-carousel-item>
+</ng-container>
+<ng-container *ngSwitchCase="'single'">
+    <mdb-carousel-item  *ngFor="let product of filteredProducts">
+        <div class="col-lg-4 col-sm-6 col-12 pb-5" >
+            <app-product-card
+            [cart]="cart"
+            [product]="product">
+        </app-product-card>
+    </div>
+</mdb-carousel-item>
+</ng-container>
+</mdb-carousel>
+
+<div align='center' *ngIf='filteredProducts.length === zero' class="pt-5 pb-5 mb-5" >
+    <span>No Items</span>
+    
+</div>              
+<!-- <div class="keepSpaces">
+    <div class="col-lg-4 col-sm-6 col-12 pb-5" *ngFor="let product of filteredProducts">
+        <app-product-card 
+        [cart]="cart"
+        [product]="product">
+    </app-product-card>
+</div> -->
+
+</div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col-md-3">
+        <div class="sticky-top">
+            <ul class="list-group">
+                <li class="list-group-item cursor-pointer"
+                [class.active]="category.isActive"
+                *ngFor="let category of categories"
+                (click)="filterCategory(category)">
+                {{category.name}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="col-md-9">
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 col-12" *ngFor="let product of filteredProducts">
+            <app-product-card
+            [cart]="cart"
+            [product]="product">
+        </app-product-card>
+    </div>
+</div>
+</div>
+
+</div>
+</div> -->
+
+<!-- 
+    <ngb-carousel class='pt-5'>  
+        <ng-template  ngbSlide *ngFor="let product of filteredProducts">  
+            <div *ngIf="product" class="col-lg-4 col-sm-6 col-12 pb-5">
+                <app-product-card 
+                [cart]="cart"
+                [product]="product">
+            </app-product-card> 
+        </div>
+    </ng-template>
+</ngb-carousel>  -->

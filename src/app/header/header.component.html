@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top custom-nav">
+    <div class="container">
+        <div class="logo">
+                <!-- https://www.freepnglogos.com/uploads/photography-logo-png/photography-logo-camera-logo-png-download-clip-art-clip-7.png -->
+            <a href="/"><img src='https://firebasestorage.googleapis.com/v0/b/habib-store1.appspot.com/o/Images%2Fazid.png?alt=media&token=c6f90419-a9f3-4c19-a217-908eb80b7559' width="100" height="60" alt="" /></a>
+        </div>
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      
+      <li  ngbDropdown class="navbar-toggler dropdown" data-toggle="collapse"> 
+      <a ngbDropdownToggle class="nav-link" id="dropdown01"  aria-haspopup="true" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+        </a>
+    <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+      <p *ngIf='user' class="dropdown-item" >{{user.name}}</p>
+      <a *ngIf='!user' class="dropdown-item" routerLink="/login">Login</a>
+      <a class="dropdown-item" routerLink="/shop"><span class="ion-ios-search-strong pr-1"></span>Search Items</a>
+      <a class="dropdown-item" routerLink="/shopping-cart"> 
+            <span class="badge badge-warning badge-pill">{{totalItems}}</span>
+            My Cart
+        </a> 
+      <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+      <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+      <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
+      <a *ngIf='user' class="dropdown-item" (click)="logout()">Logout</a>
+    </div>
+    </li>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li *ngIf="!user" class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/shop">
+                  <div class="header-search common-style">
+                      <button class="sidebar-trigger-search">
+                          <span class="ion-ios-search-strong"></span>
+                      </button>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/shopping-cart">
+                  <div class="header-cart common-style">
+                      <button class="sidebar-trigger">
+                          <span class="ion-bag"></span>
+                      </button>
+                      <span class="badge badge-warning badge-pill">
+                          {{totalItems}}
+                        </span>
+                  </div>
+                </a>
+              </li>
+          <li  ngbDropdown class="nav-item dropdown"> 
+            <a ngbDropdownToggle class="nav-link" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="header-sidebar common-style">
+                    <button class="header-navbar-active">
+                        <span class="ion-navicon"></span>
+                    </button>
+                </div>
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown02">
+              <p class="dropdown-item" >{{user.name}}</p> 
+              <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+              <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+              <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <div class="header-area header-area-padding">
+        <div class="container move">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-6">
+                    <div class="logo">
+                        <a href="/products"><img src="https://www.freepnglogos.com/uploads/photography-logo-png/photography-logo-camera-logo-png-download-clip-art-clip-7.png" width="100" height="60" alt="" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-6">
+                    <div class="header-search-cart">
+                        <div class="header-search common-style">
+                            <button class="sidebar-trigger-search">
+                                <span class="ion-ios-search-strong"></span>
+                            </button>
+                        </div>
+                        <div class="header-cart common-style">
+                            <button class="sidebar-trigger">
+                                <span class="ion-bag"></span>
+                            </button>
+                        </div>
+                        <div class="header-sidebar common-style">
+                            <button class="header-navbar-active">
+                                <span class="ion-navicon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->

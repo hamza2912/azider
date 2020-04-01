@@ -1,0 +1,65 @@
+<div class="middle-section mb-3"  data-overlay="3">
+    <div class="shop-limited-content text-center">
+        <!-- <h2 data-aos="fade-up" data-aos-duration="1000" >Ready to Checkout</h2> -->
+    </div>
+</div>
+<div class='container roleMain'>
+    <h2 class="mb-3">
+    Shopping Cart
+    <h5 class="float-right text-info">You have {{totalItems}} in your cart</h5>
+    </h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th width="80"></th>
+            <th>Product</th>
+            <th>Size,Color</th>
+            <th class="text-center" width="230">Quantity</th>
+            <th class="text-right" width="200">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cartItems">
+            <td>
+                <div class="thumbnail"
+                    [style.backgroundImage]="'url(' + item.product.imageUrl + ')'">
+                </div>
+            </td>
+            <td>{{item.product.title}}</td>
+            <td>{{item.product.sizes}},{{item.product.colors}}</td>
+            <td class="cart-actions">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                      <button class="btn btn-secondary" type="button"
+                        (click)="addToCart(item)">+</button>
+                    </div>
+                    <div class="col-6 text-center items-count pl-1">
+                        {{item.quantity}} in cart
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-secondary" type="button"
+                        (click)="subFromCart(item)">-</button>
+                    </div>
+                </div>
+            </td>
+            <td class="text-right">{{item.product.price * item.quantity | currency}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="text-right">{{totalAmount | currency}}</th>
+        </tr>
+    </tfoot>
+</table>
+<p *ngIf="totalItems">
+    <button class="btn btn-info mr-2" (click)="checkout()">
+        Checkout Cart
+    </button>
+    <button class="btn btn-danger" (click)="clearShoppingCart()">
+        Clear shopping cart
+    </button>
+</p>
+</div>

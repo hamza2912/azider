@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "habib-store1",
+    "staging": "habib-store1"
+  }
+}

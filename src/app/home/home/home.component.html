@@ -1,0 +1,190 @@
+<div align='center' class='container' *ngIf="!frontCover"> 
+    <div  class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div *ngIf="frontCover" class="product-style mb-5">
+    <div  class="product-tab-list text-center mb-45 nav product-menu-mrg pt-3" role="tablist">
+        <a class='cursor-pointer' [class.active]="false" href='/shop' data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+            <h4 data-aos="zoom-in" data-aos-duration="1000">ALL CATEGORIES</h4>
+        </a>
+        <div *ngFor="let category of categories" class="btn-group itemDropdown" mdbDropdown>
+            <a class='cursor-pointer' mdbDropdownToggle data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+                <h4 data-aos="zoom-in" data-aos-duration="1000">{{category.id}}</h4>
+            </a>
+            <div *ngIf="category.subCategories"  class="dropdown-menu">
+                    <a *ngFor="let subcategory of category.subCategories" role='button 'class="dropdown-item" (click)="goToShop(subcategory)">{{subcategory}}</a>
+                  
+                </div>
+            </div>
+        <!-- <div class="btn-group itemDropdown" mdbDropdown>
+        <a class='cursor-pointer' mdbDropdownToggle data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">    
+            <h4 data-aos="zoom-in" data-aos-duration="1000">MEN APPAREL</h4>
+        </a>
+        <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Men Shirts</a>
+                <a class="dropdown-item" href="#">Men Paints</a>
+                <a class="dropdown-item" href="#">Men Shoes</a>
+              
+            </div>
+        </div>
+        <div class="btn-group itemDropdown" mdbDropdown>
+        <a class='cursor-pointer' mdbDropdownToggle  data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+            <h4 data-aos="zoom-in" data-aos-duration="1000">WOMEN APPAREL</h4>
+        </a>
+        <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Women Shirts</a>
+                <a class="dropdown-item" href="#">Women Paints</a>
+                <a class="dropdown-item" href="#">Women Shoes</a>
+              </div>
+        </div> -->
+        <!-- <a class='cursor-pointer'  href='/shop'
+        data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+        <h4 data-aos="zoom-in" data-aos-duration="1000">KIDS</h4>
+        </a>
+        <a class='cursor-pointer'  href='/shop'
+        data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+        <h4 data-aos="zoom-in" data-aos-duration="1000">BAGS</h4>
+        </a>
+        <a class='cursor-pointer'  href='/shop'
+        data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+        <h4 data-aos="zoom-in" data-aos-duration="1000">SHOES</h4>
+        </a>
+        <a class='cursor-pointer'  href='/shop'
+        data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+        <h4 data-aos="zoom-in" data-aos-duration="1000">WATCHES</h4>
+        </a>
+        <a class='cursor-pointer'  href='/shop'
+        data-toggle="tab" role="tab" aria-selected="true" aria-controls="home1">
+        <h4 data-aos="zoom-in" data-aos-duration="1000">ACCESSORIES</h4>
+        </a> -->
+</div>
+</div>
+<div *ngIf="frontCover">
+    <mdb-carousel [animation]="'slide'">
+    <mdb-carousel-item>
+    <div  class="intro-section" [ngStyle]="{'background-image': 'url('+frontCover+')', 'width':'100%'}" alt="First slide">
+        <div class="container">
+            <div class="slider-content slider-content-style-1 slider-animated-1">
+                <h3 data-aos="fade-right" data-aos-duration="500" class="animated fancy text-light">{{frontText1}} <span>{{frontText2}}</span></h3>
+                <h2 data-aos-delay='500' data-aos="fade-right" data-aos-duration="500" class="animated">{{frontText3}}</h2>
+                <p  data-aos-delay='500' data-aos="fade-right" data-aos-duration="500"class="animated">{{frontText4}} </p>
+                <a  data-aos-delay='500' data-aos="fade-right" data-aos-duration="500" class="btn-hover slider-btn-style animated" href="/shop">shop now</a>
+            </div>
+        </div>
+    </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+            <div  class="intro-section" [ngStyle]="{'background-image': 'url('+frontCover+')', 'width':'100%'}" alt="Second slide">
+                <div class="container">
+                    <div class="slider-content slider-content-style-1 slider-animated-1">
+                        <h3 data-aos="fade-right" data-aos-duration="500" class="animated fancy text-light">{{frontText5}}<span>{{frontText6}}</span></h3>
+                        <h2 data-aos-delay='500' data-aos="fade-right" data-aos-duration="500" class="animated">{{frontText7}}</h2>
+                        <p  data-aos-delay='500' data-aos="fade-right" data-aos-duration="500"class="animated">{{frontText8}} </p>
+                        <a  data-aos-delay='500' data-aos="fade-right" data-aos-duration="500" class="btn-hover slider-btn-style animated" href="/shop">shop now</a>
+                    </div>
+                </div>
+            </div>
+            </mdb-carousel-item>
+</mdb-carousel>
+    
+    <!-- <mdb-carousel [animation]="'slide'">
+        <mdb-carousel-item>
+            <div  class="intro-section" [ngStyle]="{'background-image': 'url('+frontCover+')'}" alt="First slide">
+                <div class="container">
+                    <div class="slider-content slider-content-style-1 slider-animated-1">
+                        <h3 data-aos="fade-right" data-aos-duration="500" class="animated fancy text-light">{{frontText1}} <span>{{frontText2}}</span></h3>
+                        <h2 data-aos-delay='500' data-aos="fade-right" data-aos-duration="500" class="animated">{{frontText3}}</h2>
+                        <p  data-aos-delay='500' data-aos="fade-right" data-aos-duration="500"class="animated">{{frontText4}} </p>
+                        <a  data-aos-delay='500' data-aos="fade-right" data-aos-duration="500" class="btn-hover slider-btn-style animated" href="/shop">shop now</a>
+                    </div>
+                </div>
+            </div>
+        </mdb-carousel-item>
+        <mdb-carousel-item>
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second slide">
+        </mdb-carousel-item>
+    </mdb-carousel>
+-->
+<div class="container">
+    <div class="section-title text-center mb-35 pt-5">
+        <h2>Featured Products</h2>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when look</p>
+    </div>
+    <app-products [type]='None'></app-products> 
+    
+</div>
+
+<div class="middle-section keepitcenter"  data-overlay="3" *ngIf="bottomCover" [ngStyle]="{'background-image': 'url('+bottomCover+')'}">
+    <div class="shop-limited-content text-center">
+        <h2 data-aos="fade-up" data-aos-duration="1000" >{{bottomText}}</h2>
+        <a class="btn-hover limited-btn" href="/shop">view more</a>
+    </div>
+</div>
+<div class="container">
+    <div class="section-title text-center mb-35 pt-5">
+        <h2>New Arrivals</h2>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when look</p>
+    </div>
+    <app-products [type]='NewArrivals'></app-products>
+</div>
+<div class="container">
+    <div class="section-title text-center mb-35 pt-5">
+        <h2>Get Accessories</h2>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when look</p>
+    </div>
+    <app-products [type]='Accessories'></app-products>
+</div>
+<footer class="last-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5 col-12">
+                <div class="footer-widget">
+                    <div class="footer-widget-l-content">
+                        <h4>Get in touch</h4>
+                        <ul>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li> 
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li> 
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-7 col-12">
+                <div class="footer-widget">
+                    <div class="footer-widget-m-content text-center">
+                        <div class="footer-logo pt-3">
+                            <a href="#">
+                                <img src='https://firebasestorage.googleapis.com/v0/b/habib-store1.appspot.com/o/Images%2Fazid.png?alt=media&token=c6f90419-a9f3-4c19-a217-908eb80b7559' width="100" height="60" alt="" />
+                            </a>
+                        </div>
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">home</a></li>
+                                    <li><a href="#">about us</a></li>
+                                    <li><a href="/shop">shop </a></li>
+                                    <li><a href="#"> blog </a></li>
+                                    <li><a href="#">pages </a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <p>Copyright © <a href="https://hastech.company/">ShanDevelopers</a> 2019 . All Right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-12">
+                <div class="footer-widget f-right">
+                    <div class="footer-widget-r-content">
+                        <ul>
+                            <li><span>Phone :</span> +00 123 54 0056</li>
+                            <li><span>Email : </span> <a href="#">neha@gmail.com</a></li>
+                            <li><span>Address :</span> Dhaka Bangladesh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>

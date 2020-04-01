@@ -1,0 +1,22 @@
+.bg-white{
+    background-color: white;
+}
+
+
+.ul,li {
+    list-style: none;
+}
+
+.custom-nav {
+    -webkit-box-shadow: 3px 3px 3px rgb(198, 197, 197);
+    -moz-box-shadow:    3px 3px 3px rgb(198, 197, 197);
+    box-shadow:         3px 3px 3px rgb(198, 197, 197);
+    z-index:10;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+    opacity: 100;
+    left: -200%;
+    transition: .55s;
+}
