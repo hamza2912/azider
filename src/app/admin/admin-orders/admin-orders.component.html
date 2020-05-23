@@ -40,6 +40,11 @@
                                                Phone: {{order.phone}}
                                             </div>
                                        </li>
+                                       <li class="list-group-item">
+                                        <div >
+                                           Cash on Delivery: {{order.payOnDelievery}}
+                                        </div>
+                                   </li>
                                 </ul>
                             </div>
                         </div>
@@ -85,7 +90,7 @@
       <td>{{ order.isComplete ? 'Yes' : 'No'}}</td>
       <td>
         <button *ngIf="!order.isComplete" type="button"
-          (click)="markOrderComplete(order)" class="btn btn-success">Mark complete</button>
+          (click)="markOrderComplete(order)" class="btn btn-success btn-sm">Mark complete</button>
       </td>
     </tr>
   </tbody> 

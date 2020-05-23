@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { NgxStripeModule } from 'ngx-stripe';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -51,6 +52,7 @@ import { ProductViewComponent } from './product-view/product-view/product-view.c
     AngularFireModule.initializeApp(environment.firebase, 'Mediwod'),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    NgxStripeModule.forRoot('pk_test_PesFfiDIgxZyC9UTglbdQmdJ006ApIzCzO'),
     MDBBootstrapModule.forRoot(),
     CarouselModule,
     WavesModule,

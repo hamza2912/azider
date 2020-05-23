@@ -43,4 +43,5 @@ export interface IOrder {
     isComplete: boolean;
     userId: string;
     datePlaced: string;
+    payOnDelievery?: boolean;
 }

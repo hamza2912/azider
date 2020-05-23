@@ -14,7 +14,6 @@
             </a>
             <div *ngIf="category.subCategories"  class="dropdown-menu">
                     <a *ngFor="let subcategory of category.subCategories" role='button 'class="dropdown-item" (click)="goToShop(subcategory)">{{subcategory}}</a>
-                  
                 </div>
             </div>
         <!-- <div class="btn-group itemDropdown" mdbDropdown>
@@ -75,7 +74,7 @@
     </div>
     </mdb-carousel-item>
     <mdb-carousel-item>
-            <div  class="intro-section" [ngStyle]="{'background-image': 'url('+frontCover+')', 'width':'100%'}" alt="Second slide">
+            <div  class="intro-section" [ngStyle]="{'background-image': 'url('+frontCover2+')', 'width':'100%'}" alt="Second slide">
                 <div class="container">
                     <div class="slider-content slider-content-style-1 slider-animated-1">
                         <h3 data-aos="fade-right" data-aos-duration="500" class="animated fancy text-light">{{frontText5}}<span>{{frontText6}}</span></h3>

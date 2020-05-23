@@ -8,8 +8,25 @@
         <span class="navbar-toggler-icon"></span>
       </button> -->
       
-      <li  ngbDropdown class="navbar-toggler dropdown" data-toggle="collapse"> 
-      <a ngbDropdownToggle class="nav-link" id="dropdown01"  aria-haspopup="true" aria-expanded="false">
+      <li  class="navbar-toggler cursor-pointer" data-toggle="collapse" (click)="openNav()">
+        <span class="ion-navicon"></span>
+            <div id="mySidenav" class="sidenav">
+                <a role='button' class="closebtn" (click)="closeNav()">&times;</a>
+                <a>{{user.name}}</a>
+                <a *ngIf='!user' routerLink="/login"><i class="far fa-user pr-1"></i>Login</a>
+                <a routerLink="/shop"><span class="ion-ios-search-strong pr-1"></span>Search Items</a>
+                <a routerLink="/shopping-cart"><span class="ion-bag"></span><span class="badge badge-warning badge-pill pr-1">{{totalItems}}</span>
+                    My Cart</a>
+                <a routerLink="/my/orders"><i class="far fa-check-square pr-1"></i>My Orders</a>
+                <a *ngIf="isAdminUser" routerLink="/admin/products">Manage Products</a>
+                <a *ngIf="isAdminUser" routerLink="/admin/orders">Manage Orders</a>
+                <a *ngIf='user' (click)="logout()">Logout</a>
+          </div>
+          
+          <!-- Use any element to open the sidenav -->
+          
+          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <!-- <a ngbDropdownToggle class="nav-link" id="dropdown01"  aria-haspopup="true" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
         </a>
     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
@@ -24,9 +41,9 @@
       <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/products">Manage Products</a>
       <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
       <a *ngIf='user' class="dropdown-item" (click)="logout()">Logout</a>
-    </div>
+    </div> -->
     </li>
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">  
         <ul class="navbar-nav mr-auto">
           <li *ngIf="!user" class="nav-item">
             <a class="nav-link" routerLink="/login">Login</a>
