@@ -79,17 +79,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['login']);
   }
 
-  openNav() {
+  // openNav() {
 
-    document.getElementById("mySidenav").style.width = "250px"
+  //   document.getElementById("mySidenav").style.width = "250px"
   
-  }
+  // }
   
-  /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-  closeNav() {
+  // /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+  // closeNav() {
    
-    document.getElementById("mySidenav").style.width = "0";
+  //   document.getElementById("mySidenav").style.width = "0";
 
-  }
+  // }
 
 }

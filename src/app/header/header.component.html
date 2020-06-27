@@ -8,10 +8,9 @@
         <span class="navbar-toggler-icon"></span>
       </button> -->
       
-      <li  class="navbar-toggler cursor-pointer" data-toggle="collapse" (click)="openNav()">
-        <span class="ion-navicon"></span>
+      <li  class="navbar-toggler cursor-pointer " data-toggle="collapse">
+        <span class="open-menu ion-navicon"></span>
             <div id="mySidenav" class="sidenav">
-                <a role='button' class="closebtn" (click)="closeNav()">&times;</a>
                 <a>{{user.name}}</a>
                 <a *ngIf='!user' routerLink="/login"><i class="far fa-user pr-1"></i>Login</a>
                 <a routerLink="/shop"><span class="ion-ios-search-strong pr-1"></span>Search Items</a>
@@ -43,7 +42,7 @@
       <a *ngIf='user' class="dropdown-item" (click)="logout()">Logout</a>
     </div> -->
     </li>
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">  
+      <div class="collapse navbar-collapse open-menu" id="navbarsExampleDefault">  
         <ul class="navbar-nav mr-auto">
           <li *ngIf="!user" class="nav-item">
             <a class="nav-link" routerLink="/login">Login</a>
@@ -71,15 +70,15 @@
                   </div>
                 </a>
               </li>
-          <li  ngbDropdown class="nav-item dropdown"> 
-            <a ngbDropdownToggle class="nav-link" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li  class="nav-item"> 
+            <a class="nav-link">
                 <div class="header-sidebar common-style">
-                    <button class="header-navbar-active">
+                    <button class="header-navbar-active lg-open-menu">
                         <span class="ion-navicon"></span>
                     </button>
                 </div>
             </a>
-            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown02">
+            <div class="dropdown2-menu" aria-labelledby="dropdown02">
               <p class="dropdown-item" >{{user.name}}</p> 
               <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
               <a *ngIf="isAdminUser" class="dropdown-item" routerLink="/admin/products">Manage Products</a>

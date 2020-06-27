@@ -14,11 +14,10 @@
     z-index:10;
 }
 
-.dropdown.show .dropdown-menu {
-    display: block;
+.dropdown2-menu {
+    display: none;
     opacity: 100;
-    left: -200%;
-    transition: .55s;
+    /* left: -200%; */
 }
 
 
@@ -26,7 +25,7 @@
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    width: 250px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -35,6 +34,7 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    display: none;
   }
   
   /* The navigation menu links */
